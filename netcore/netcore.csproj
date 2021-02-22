@@ -6,7 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>Contra</RootNamespace>
     <AssemblyName>Contra007Classic_Launcher</AssemblyName>
-    <ApplicationIcon>..\net45\ContraIco.ico</ApplicationIcon>
+    <ApplicationIcon>..\net45\Contra_Classic.ico</ApplicationIcon>
     <ApplicationManifest>..\net45\app.manifest</ApplicationManifest>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
