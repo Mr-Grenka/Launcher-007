@@ -61,7 +61,7 @@ namespace Contra
 
         //int modVersionLocalInt;
         //bool patch1Found, patch2Found;
-        string versions_url = "https://raw.githubusercontent.com/ContraMod/Launcher-007/main/Versions.txt";
+        string versions_url = "https://raw.githubusercontent.com/ContraMod/Launcher-007/master/Versions.txt";
         string launcher_url = "https://github.com/ContraMod/Launcher-007/releases/download/";
         string patch_url = "http://contra.cncguild.net/Downloads/";
 
