@@ -397,6 +397,7 @@ namespace Contra
             this.BackgroundImage = global::Contra.Properties.Resources.background;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.PatchDLPanel);
             this.Controls.Add(this.moreOptions);
             this.Controls.Add(this.buttonDiscordClassic);
             this.Controls.Add(this.MOTD);
@@ -410,7 +411,6 @@ namespace Contra
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.buttonLaunch);
-            this.Controls.Add(this.PatchDLPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

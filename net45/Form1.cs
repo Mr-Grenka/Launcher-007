@@ -1839,6 +1839,7 @@ namespace Contra
             toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
             currentFileLabel = "File: ";
             ModDLLabel.Text = "Download progress: ";
+            CancelModDLBtn.Text = "Cancel";
             string verString, yearString = "";
             if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
             {
@@ -1906,6 +1907,7 @@ namespace Contra
             GoofyPics.Text = "Смешные";
             currentFileLabel = "Файл: ";
             ModDLLabel.Text = "Прогресс загрузки: ";
+            CancelModDLBtn.Text = "Отмена";
             string verString, yearString = "";
             if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
             {
