@@ -126,18 +126,9 @@
     <Compile Include="TransparentTrackBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Form1.bg.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.ru.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.uk.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Globals.resx">
       <DependentUpon>Globals.cs</DependentUpon>
@@ -196,9 +187,11 @@
     <None Include="Resources\settings_button_yellow.png" />
     <None Include="Resources\settings_button_yellow_rus.png" />
     <None Include="Resources\background.png" />
+    <None Include="Resources\flag_ru.png" />
+    <None Include="Resources\flag_ru_tr.png" />
+    <None Include="Resources\vpnbg.png" />
     <Content Include="Version.txt" />
     <None Include="README.md" />
-    <None Include="Resources\vpnbg.jpg" />
     <None Include="Resources\btnOk3a.png" />
     <None Include="Resources\btnOk3.png" />
     <None Include="Resources\flag_bg_tr.png" />
@@ -229,12 +222,12 @@
   <ItemGroup>
     <PublishFile Include="bn\Contra Launcher.resources">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
   </ItemGroup>

@@ -23,4 +23,7 @@
     <PackageReference Include="System.Management" Version="*" />
     <PackageReference Include="System.Resources.Extensions" Version="*" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
 </Project>
