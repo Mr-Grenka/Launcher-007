@@ -867,6 +867,20 @@ namespace Contra
 
         public void StartGenerals()
         {
+            // Check for .dll files
+            if (!File.Exists("binkw32.dll") || (!File.Exists("mss32.dll")))
+            {
+                if (Globals.GB_Checked == true)
+                {
+                    MessageBox.Show("The game cannot start because the \"binkw32.dll\" and/or \"mss32.dll\" file(s) were not found. You may have installed the mod in the wrong folder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    MessageBox.Show("Игра не может запуститься, потому что файлы \"binkw32.dll\" и/или \"mss32.dll\" не найдены. Возможно, вы установили мод не в ту папку.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return;
+            }
+
             // Rename generals.exes
             if (File.Exists("generals.exe") && (File.Exists("generals.ctr")))
             {
@@ -1274,16 +1288,65 @@ namespace Contra
             {
                 using (FileStream fs = File.Create(UserDataLeafName() + @"\Options.ini"))
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes("IdealStaticGameLOD = High" + Environment.NewLine + "Resolution = " + ScreenResolutionX + " " + ScreenResolutionY);
+                    byte[] info = new UTF8Encoding(true).GetBytes(
+                        "IdealStaticGameLOD = High" +
+                        Environment.NewLine +
+                        "Resolution = " + ScreenResolutionX + " " + ScreenResolutionY +
+                        Environment.NewLine +
+                        "BuildingOcclusion = Yes" +
+                        Environment.NewLine +
+                        "DynamicLOD = Yes" +
+                        Environment.NewLine +
+                        "ExtraAnimations = Yes" +
+                        Environment.NewLine +
+                        "HeatEffects = No" +
+                        Environment.NewLine +
+                        "ShowSoftWaterEdge = Yes" +
+                        Environment.NewLine +
+                        "ShowTrees = Yes" +
+                        Environment.NewLine +
+                        "StaticGameLOD = Custom" +
+                        Environment.NewLine +
+                        "UseCloudMap = Yes" +
+                        Environment.NewLine +
+                        "UseLightMap = Yes" +
+                        Environment.NewLine +
+                        "UseShadowDecals = Yes" +
+                        Environment.NewLine +
+                        "UseShadowVolumes = No");
                     fs.Write(info, 0, info.Length);
                 }
                 using (FileStream fs = File.Create(myDocPath + @"\Options.ini"))
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes("IdealStaticGameLOD = High" + Environment.NewLine + "Resolution = " + ScreenResolutionX + " " + ScreenResolutionY);
+                    byte[] info = new UTF8Encoding(true).GetBytes(
+                        "IdealStaticGameLOD = High" +
+                        Environment.NewLine +
+                        "Resolution = " + ScreenResolutionX + " " + ScreenResolutionY +
+                        Environment.NewLine +
+                        "BuildingOcclusion = Yes" +
+                        Environment.NewLine +
+                        "DynamicLOD = Yes" +
+                        Environment.NewLine +
+                        "ExtraAnimations = Yes" +
+                        Environment.NewLine +
+                        "HeatEffects = No" +
+                        Environment.NewLine +
+                        "ShowSoftWaterEdge = Yes" +
+                        Environment.NewLine +
+                        "ShowTrees = Yes" +
+                        Environment.NewLine +
+                        "StaticGameLOD = Custom" +
+                        Environment.NewLine +
+                        "UseCloudMap = Yes" +
+                        Environment.NewLine +
+                        "UseLightMap = Yes" +
+                        Environment.NewLine +
+                        "UseShadowDecals = Yes" +
+                        Environment.NewLine +
+                        "UseShadowVolumes = No");
                     fs.Write(info, 0, info.Length);
                 }
             }
-
             catch { }
         }
 
@@ -1315,8 +1378,7 @@ namespace Contra
                 if (File.Exists("!Contra_Classic_GameData.big"))
                 {
                     Encoding encoding = Encoding.GetEncoding("windows-1252");
-                    var regex = Regex.Replace(File.ReadAllText("!Contra_Classic_GameData.big"), "  MaxCameraHeight = .*\r?\n", "  MaxCameraHeight = 282.0 ;350.0\r\n");
-                    string read = File.ReadAllText("!Contra_Classic_GameData.big", encoding);
+                    var regex = Regex.Replace(File.ReadAllText("!Contra_Classic_GameData.big", encoding), "  MaxCameraHeight = .*\r?\n", "  MaxCameraHeight = 240.0 ;350.0\r\n");
                     File.WriteAllText("!Contra_Classic_GameData.big", regex, encoding);
                 }
                 else
@@ -1469,14 +1531,14 @@ namespace Contra
                     File.Move("!Contra_Classic_GameData.ctr", "!Contra_Classic_GameData.big");
                 }
                 // Set default cam height
-                try
-                {
-                    if (AspectRatio(ScreenResolutionX, ScreenResolutionY) == "16:9" && isGentoolInstalled("d3d8.dll"))
-                    {
-                        ChangeCamHeight();
-                    }
-                }
-                catch { }
+                //try
+                //{
+                //    if (AspectRatio(ScreenResolutionX, ScreenResolutionY) == "16:9" && isGentoolInstalled("d3d8.dll"))
+                //    {
+                //        ChangeCamHeight();
+                //    }
+                //}
+                //catch { }
 
                 // If there are older Contra config folders, this means Contra Launcher has been
                 // ran before on this PC, so in this case, we skip first run welcome message.
