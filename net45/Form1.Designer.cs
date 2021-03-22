@@ -75,7 +75,6 @@ namespace Contra
             this.RadioEN.Checked = true;
             this.RadioEN.ForeColor = System.Drawing.Color.White;
             this.RadioEN.Name = "RadioEN";
-            this.RadioEN.TabStop = true;
             this.RadioEN.UseVisualStyleBackColor = true;
             // 
             // RadioRU
@@ -91,7 +90,6 @@ namespace Contra
             this.RadioENQuotes.Checked = true;
             this.RadioENQuotes.ForeColor = System.Drawing.Color.White;
             this.RadioENQuotes.Name = "RadioENQuotes";
-            this.RadioENQuotes.TabStop = true;
             this.RadioENQuotes.UseVisualStyleBackColor = true;
             // 
             // MNew
@@ -100,7 +98,6 @@ namespace Contra
             this.MNew.Checked = true;
             this.MNew.ForeColor = System.Drawing.Color.White;
             this.MNew.Name = "MNew";
-            this.MNew.TabStop = true;
             this.MNew.UseVisualStyleBackColor = true;
             this.MNew.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
@@ -118,7 +115,6 @@ namespace Contra
             this.DefaultPics.Checked = true;
             this.DefaultPics.ForeColor = System.Drawing.Color.White;
             this.DefaultPics.Name = "DefaultPics";
-            this.DefaultPics.TabStop = true;
             this.DefaultPics.UseVisualStyleBackColor = true;
             // 
             // GoofyPics
@@ -191,6 +187,7 @@ namespace Contra
             resources.ApplyResources(this.buttonDiscord009, "buttonDiscord009");
             this.buttonDiscord009.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDiscord009.Name = "buttonDiscord009";
+            this.buttonDiscord009.TabStop = false;
             this.buttonDiscord009.UseVisualStyleBackColor = false;
             this.buttonDiscord009.Click += new System.EventHandler(this.buttonChat_Click);
             this.buttonDiscord009.MouseEnter += new System.EventHandler(this.buttonChat_MouseEnter);
@@ -207,6 +204,7 @@ namespace Contra
             this.button18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button18.Name = "button18";
+            this.button18.TabStop = false;
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             this.button18.MouseEnter += new System.EventHandler(this.button18_MouseEnter);
@@ -223,6 +221,7 @@ namespace Contra
             this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button17.Name = "button17";
+            this.button17.TabStop = false;
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             this.button17.MouseEnter += new System.EventHandler(this.button17_MouseEnter);
@@ -239,6 +238,7 @@ namespace Contra
             resources.ApplyResources(this.buttonLaunch, "buttonLaunch");
             this.buttonLaunch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLaunch.Name = "buttonLaunch";
+            this.buttonLaunch.TabStop = false;
             this.buttonLaunch.UseVisualStyleBackColor = false;
             this.buttonLaunch.Click += new System.EventHandler(this.button1_Click);
             this.buttonLaunch.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
@@ -255,7 +255,6 @@ namespace Contra
             this.RadioFlag_GB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.RadioFlag_GB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.RadioFlag_GB.Name = "RadioFlag_GB";
-            this.RadioFlag_GB.TabStop = true;
             this.RadioFlag_GB.UseVisualStyleBackColor = false;
             this.RadioFlag_GB.CheckedChanged += new System.EventHandler(this.RadioFlag_GB_CheckedChanged);
             this.RadioFlag_GB.MouseEnter += new System.EventHandler(this.RadioFlag_GB_MouseEnter);
@@ -280,7 +279,6 @@ namespace Contra
             this.RadioFlag_RU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.RadioFlag_RU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.RadioFlag_RU.Name = "RadioFlag_RU";
-            this.RadioFlag_RU.TabStop = true;
             this.RadioFlag_RU.UseVisualStyleBackColor = false;
             this.RadioFlag_RU.CheckedChanged += new System.EventHandler(this.RadioFlag_RU_CheckedChanged);
             this.RadioFlag_RU.MouseEnter += new System.EventHandler(this.RadioFlag_RU_MouseEnter);
@@ -340,6 +338,7 @@ namespace Contra
             resources.ApplyResources(this.CancelModDLBtn, "CancelModDLBtn");
             this.CancelModDLBtn.ForeColor = System.Drawing.Color.White;
             this.CancelModDLBtn.Name = "CancelModDLBtn";
+            this.CancelModDLBtn.TabStop = false;
             this.CancelModDLBtn.UseVisualStyleBackColor = false;
             this.CancelModDLBtn.Click += new System.EventHandler(this.CancelModDLBtn_Click);
             // 
@@ -361,6 +360,7 @@ namespace Contra
             resources.ApplyResources(this.buttonDiscordClassic, "buttonDiscordClassic");
             this.buttonDiscordClassic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDiscordClassic.Name = "buttonDiscordClassic";
+            this.buttonDiscordClassic.TabStop = false;
             this.buttonDiscordClassic.UseVisualStyleBackColor = false;
             this.buttonDiscordClassic.Click += new System.EventHandler(this.buttonDiscordClassic_Click);
             this.buttonDiscordClassic.MouseEnter += new System.EventHandler(this.buttonDiscordClassic_MouseEnter);
@@ -377,6 +377,7 @@ namespace Contra
             resources.ApplyResources(this.moreOptions, "moreOptions");
             this.moreOptions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.moreOptions.Name = "moreOptions";
+            this.moreOptions.TabStop = false;
             this.moreOptions.UseVisualStyleBackColor = false;
             this.moreOptions.Click += new System.EventHandler(this.buttonSettings_Click);
             this.moreOptions.MouseEnter += new System.EventHandler(this.moreOptions_MouseEnter);

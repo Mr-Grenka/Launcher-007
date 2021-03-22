@@ -64,11 +64,6 @@ namespace Contra
         public moreOptionsForm()
         {
             InitializeComponent();
-            LangFilterCheckBox.TabStop = false;
-            button17.TabStop = false;
-            button18.TabStop = false;
-            comboBox1.TabStop = false;
-            resOkButton.TabStop = false;
 
             DEVMODE vDevMode = new DEVMODE();
             int i = 0;

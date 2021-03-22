@@ -354,27 +354,6 @@
   <data name="&gt;&gt;GoofyPics.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="RadioRUQuotes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RadioRUQuotes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 15px, style=Bold</value>
-  </data>
-  <data name="RadioRUQuotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RadioRUQuotes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 33</value>
-  </data>
-  <data name="RadioRUQuotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
-  </data>
-  <data name="RadioRUQuotes.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="RadioRUQuotes.Text" xml:space="preserve">
-    <value>Russian</value>
-  </data>
   <data name="&gt;&gt;RadioRUQuotes.Name" xml:space="preserve">
     <value>RadioRUQuotes</value>
   </data>
@@ -407,6 +386,39 @@
   </data>
   <data name="&gt;&gt;voicespanel.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="RadioRUQuotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RadioRUQuotes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 15px, style=Bold</value>
+  </data>
+  <data name="RadioRUQuotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadioRUQuotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="RadioRUQuotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
+  </data>
+  <data name="RadioRUQuotes.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="RadioRUQuotes.Text" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="&gt;&gt;RadioRUQuotes.Name" xml:space="preserve">
+    <value>RadioRUQuotes</value>
+  </data>
+  <data name="&gt;&gt;RadioRUQuotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadioRUQuotes.Parent" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="&gt;&gt;RadioRUQuotes.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="languagepanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>441, 212</value>
@@ -660,27 +672,6 @@
   <data name="panel1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="RadioFlag_RU.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="RadioFlag_RU.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="RadioFlag_RU.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="RadioFlag_RU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RadioFlag_RU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 3</value>
-  </data>
-  <data name="RadioFlag_RU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 17</value>
-  </data>
-  <data name="RadioFlag_RU.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
   <data name="&gt;&gt;RadioFlag_RU.Name" xml:space="preserve">
     <value>RadioFlag_RU</value>
   </data>
@@ -714,6 +705,39 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="RadioFlag_RU.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="RadioFlag_RU.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="RadioFlag_RU.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RadioFlag_RU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadioFlag_RU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 3</value>
+  </data>
+  <data name="RadioFlag_RU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 17</value>
+  </data>
+  <data name="RadioFlag_RU.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;RadioFlag_RU.Name" xml:space="preserve">
+    <value>RadioFlag_RU</value>
+  </data>
+  <data name="&gt;&gt;RadioFlag_RU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadioFlag_RU.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;RadioFlag_RU.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>21, 17</value>
   </metadata>
@@ -740,6 +764,90 @@
   </data>
   <data name="&gt;&gt;PatchDLProgressBar.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;ModDLCurrentFileLabel.Name" xml:space="preserve">
+    <value>ModDLCurrentFileLabel</value>
+  </data>
+  <data name="&gt;&gt;ModDLCurrentFileLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModDLCurrentFileLabel.Parent" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;ModDLCurrentFileLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DLPercentLabel.Name" xml:space="preserve">
+    <value>DLPercentLabel</value>
+  </data>
+  <data name="&gt;&gt;DLPercentLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DLPercentLabel.Parent" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;DLPercentLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ModDLFileSizeLabel.Name" xml:space="preserve">
+    <value>ModDLFileSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;ModDLFileSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModDLFileSizeLabel.Parent" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;ModDLFileSizeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CancelModDLBtn.Name" xml:space="preserve">
+    <value>CancelModDLBtn</value>
+  </data>
+  <data name="&gt;&gt;CancelModDLBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CancelModDLBtn.Parent" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;CancelModDLBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ModDLLabel.Name" xml:space="preserve">
+    <value>ModDLLabel</value>
+  </data>
+  <data name="&gt;&gt;ModDLLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModDLLabel.Parent" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;ModDLLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PatchDLPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 147</value>
+  </data>
+  <data name="PatchDLPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 300</value>
+  </data>
+  <data name="PatchDLPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="PatchDLPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PatchDLPanel.Name" xml:space="preserve">
+    <value>PatchDLPanel</value>
+  </data>
+  <data name="&gt;&gt;PatchDLPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PatchDLPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PatchDLPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ModDLCurrentFileLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -906,30 +1014,6 @@
   <data name="&gt;&gt;ModDLLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="PatchDLPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 147</value>
-  </data>
-  <data name="PatchDLPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 300</value>
-  </data>
-  <data name="PatchDLPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="PatchDLPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;PatchDLPanel.Name" xml:space="preserve">
-    <value>PatchDLPanel</value>
-  </data>
-  <data name="&gt;&gt;PatchDLPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PatchDLPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PatchDLPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="buttonDiscordClassic.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1009,7 +1093,7 @@
     <value>MOTD</value>
   </data>
   <data name="&gt;&gt;MOTD.Type" xml:space="preserve">
-    <value>Contra.Marquee, Contra007Classic_Launcher, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Contra.Marquee, Contra007Classic_Launcher, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MOTD.Parent" xml:space="preserve">
     <value>$this</value>

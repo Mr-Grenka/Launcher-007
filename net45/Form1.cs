@@ -30,16 +30,6 @@ namespace Contra
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
             InitializeComponent();
             Application.ApplicationExit += new EventHandler(OnApplicationExit);
-            buttonLaunch.TabStop = false;
-            button17.TabStop = false;
-            button18.TabStop = false;
-            buttonDiscord009.TabStop = false;
-            RadioENQuotes.TabStop = false;
-            RadioEN.TabStop = false;
-            MNew.TabStop = false;
-            DefaultPics.TabStop = false;
-            RadioFlag_GB.TabStop = false;
-            RadioFlag_RU.TabStop = false;
 
             //Determine OS bitness
             if (IntPtr.Size == 8)

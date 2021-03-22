@@ -49,9 +49,9 @@ namespace Contra
             this.CloudShadowsCheckBox = new System.Windows.Forms.CheckBox();
             this.ExtraGroundLightingCheckBox = new System.Windows.Forms.CheckBox();
             this.SmoothWaterBordersCheckBox = new System.Windows.Forms.CheckBox();
-            this.camTrackBar = new Contra.TrackBar();
             this.QSCheckBox = new System.Windows.Forms.CheckBox();
             this.WinCheckBox = new System.Windows.Forms.CheckBox();
+            this.camTrackBar = new Contra.TrackBar();
             this.SuspendLayout();
             // 
             // button17
@@ -92,6 +92,7 @@ namespace Contra
             this.LangFilterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.LangFilterCheckBox.ForeColor = System.Drawing.Color.White;
             this.LangFilterCheckBox.Name = "LangFilterCheckBox";
+            this.LangFilterCheckBox.TabStop = false;
             this.LangFilterCheckBox.UseVisualStyleBackColor = false;
             this.LangFilterCheckBox.CheckedChanged += new System.EventHandler(this.LangFilterCheckBox_CheckedChanged);
             // 
@@ -100,6 +101,7 @@ namespace Contra
             resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Name = "comboBox1";
+            this.comboBox1.TabStop = false;
             // 
             // labelResolution
             // 
@@ -116,6 +118,7 @@ namespace Contra
             this.resOkButton.FlatAppearance.BorderSize = 0;
             this.resOkButton.ForeColor = System.Drawing.Color.White;
             this.resOkButton.Name = "resOkButton";
+            this.resOkButton.TabStop = false;
             this.resOkButton.UseVisualStyleBackColor = false;
             this.resOkButton.Click += new System.EventHandler(this.resOkButton_Click);
             this.resOkButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.resOkButton_MouseDown);
@@ -133,6 +136,7 @@ namespace Contra
             this.HeatEffectsCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.HeatEffectsCheckBox.ForeColor = System.Drawing.Color.White;
             this.HeatEffectsCheckBox.Name = "HeatEffectsCheckBox";
+            this.HeatEffectsCheckBox.TabStop = false;
             this.HeatEffectsCheckBox.UseVisualStyleBackColor = false;
             this.HeatEffectsCheckBox.CheckedChanged += new System.EventHandler(this.HeatEffectsCheckBox_CheckedChanged);
             // 
@@ -144,6 +148,7 @@ namespace Contra
             this.camOkButton.FlatAppearance.BorderSize = 0;
             this.camOkButton.ForeColor = System.Drawing.Color.White;
             this.camOkButton.Name = "camOkButton";
+            this.camOkButton.TabStop = false;
             this.camOkButton.UseVisualStyleBackColor = false;
             this.camOkButton.Click += new System.EventHandler(this.camOkButton_Click);
             // 
@@ -160,6 +165,7 @@ namespace Contra
             this.DisableDynamicLODCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.DisableDynamicLODCheckBox.ForeColor = System.Drawing.Color.White;
             this.DisableDynamicLODCheckBox.Name = "DisableDynamicLODCheckBox";
+            this.DisableDynamicLODCheckBox.TabStop = false;
             this.DisableDynamicLODCheckBox.UseVisualStyleBackColor = false;
             this.DisableDynamicLODCheckBox.CheckedChanged += new System.EventHandler(this.DisableDynamicLODCheckBox_CheckedChanged);
             // 
@@ -169,6 +175,7 @@ namespace Contra
             this.ExtraAnimationsCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.ExtraAnimationsCheckBox.ForeColor = System.Drawing.Color.White;
             this.ExtraAnimationsCheckBox.Name = "ExtraAnimationsCheckBox";
+            this.ExtraAnimationsCheckBox.TabStop = false;
             this.ExtraAnimationsCheckBox.UseVisualStyleBackColor = false;
             this.ExtraAnimationsCheckBox.CheckedChanged += new System.EventHandler(this.ExtraAnimationsCheckBox_CheckedChanged);
             // 
@@ -178,6 +185,7 @@ namespace Contra
             this.ShowPropsCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.ShowPropsCheckBox.ForeColor = System.Drawing.Color.White;
             this.ShowPropsCheckBox.Name = "ShowPropsCheckBox";
+            this.ShowPropsCheckBox.TabStop = false;
             this.ShowPropsCheckBox.UseVisualStyleBackColor = false;
             this.ShowPropsCheckBox.CheckedChanged += new System.EventHandler(this.ShowPropsCheckBox_CheckedChanged);
             // 
@@ -187,6 +195,7 @@ namespace Contra
             this.BehindBuildingsCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.BehindBuildingsCheckBox.ForeColor = System.Drawing.Color.White;
             this.BehindBuildingsCheckBox.Name = "BehindBuildingsCheckBox";
+            this.BehindBuildingsCheckBox.TabStop = false;
             this.BehindBuildingsCheckBox.UseVisualStyleBackColor = false;
             this.BehindBuildingsCheckBox.CheckedChanged += new System.EventHandler(this.BehindBuildingsCheckBox_CheckedChanged);
             // 
@@ -196,6 +205,7 @@ namespace Contra
             this.Shadows3DCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.Shadows3DCheckBox.ForeColor = System.Drawing.Color.White;
             this.Shadows3DCheckBox.Name = "Shadows3DCheckBox";
+            this.Shadows3DCheckBox.TabStop = false;
             this.Shadows3DCheckBox.UseVisualStyleBackColor = false;
             this.Shadows3DCheckBox.CheckedChanged += new System.EventHandler(this.Shadows3DCheckBox_CheckedChanged);
             // 
@@ -205,6 +215,7 @@ namespace Contra
             this.Shadows2DCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.Shadows2DCheckBox.ForeColor = System.Drawing.Color.White;
             this.Shadows2DCheckBox.Name = "Shadows2DCheckBox";
+            this.Shadows2DCheckBox.TabStop = false;
             this.Shadows2DCheckBox.UseVisualStyleBackColor = false;
             this.Shadows2DCheckBox.CheckedChanged += new System.EventHandler(this.Shadows2DCheckBox_CheckedChanged);
             // 
@@ -214,6 +225,7 @@ namespace Contra
             this.CloudShadowsCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.CloudShadowsCheckBox.ForeColor = System.Drawing.Color.White;
             this.CloudShadowsCheckBox.Name = "CloudShadowsCheckBox";
+            this.CloudShadowsCheckBox.TabStop = false;
             this.CloudShadowsCheckBox.UseVisualStyleBackColor = false;
             this.CloudShadowsCheckBox.CheckedChanged += new System.EventHandler(this.CloudShadowsCheckBox_CheckedChanged);
             // 
@@ -223,6 +235,7 @@ namespace Contra
             this.ExtraGroundLightingCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.ExtraGroundLightingCheckBox.ForeColor = System.Drawing.Color.White;
             this.ExtraGroundLightingCheckBox.Name = "ExtraGroundLightingCheckBox";
+            this.ExtraGroundLightingCheckBox.TabStop = false;
             this.ExtraGroundLightingCheckBox.UseVisualStyleBackColor = false;
             this.ExtraGroundLightingCheckBox.CheckedChanged += new System.EventHandler(this.ExtraGroundLightingCheckBox_CheckedChanged);
             // 
@@ -232,18 +245,9 @@ namespace Contra
             this.SmoothWaterBordersCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.SmoothWaterBordersCheckBox.ForeColor = System.Drawing.Color.White;
             this.SmoothWaterBordersCheckBox.Name = "SmoothWaterBordersCheckBox";
+            this.SmoothWaterBordersCheckBox.TabStop = false;
             this.SmoothWaterBordersCheckBox.UseVisualStyleBackColor = false;
             this.SmoothWaterBordersCheckBox.CheckedChanged += new System.EventHandler(this.SmoothWaterBordersCheckBox_CheckedChanged);
-            // 
-            // camTrackBar
-            // 
-            this.camTrackBar.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.camTrackBar, "camTrackBar");
-            this.camTrackBar.Maximum = 750;
-            this.camTrackBar.Minimum = 350;
-            this.camTrackBar.Name = "camTrackBar";
-            this.camTrackBar.TabStop = true;
-            this.camTrackBar.Scroll += new System.EventHandler(this.camTrackBar_Scroll);
             // 
             // QSCheckBox
             // 
@@ -251,6 +255,7 @@ namespace Contra
             this.QSCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.QSCheckBox.ForeColor = System.Drawing.Color.White;
             this.QSCheckBox.Name = "QSCheckBox";
+            this.QSCheckBox.TabStop = false;
             this.QSCheckBox.UseVisualStyleBackColor = false;
             this.QSCheckBox.CheckedChanged += new System.EventHandler(this.QSCheckBox_CheckedChanged);
             // 
@@ -260,8 +265,19 @@ namespace Contra
             this.WinCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.WinCheckBox.ForeColor = System.Drawing.Color.White;
             this.WinCheckBox.Name = "WinCheckBox";
+            this.WinCheckBox.TabStop = false;
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
+            // 
+            // camTrackBar
+            // 
+            this.camTrackBar.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.camTrackBar, "camTrackBar");
+            this.camTrackBar.Maximum = 500;
+            this.camTrackBar.Minimum = 350;
+            this.camTrackBar.Name = "camTrackBar";
+            this.camTrackBar.Value = 350;
+            this.camTrackBar.Scroll += new System.EventHandler(this.camTrackBar_Scroll);
             // 
             // moreOptionsForm
             // 
