@@ -1,4 +1,4 @@
-﻿Mod: 1$
+﻿Patch: 1$
 Mod Text: 007 Classic$
 Launcher: 1.0.0.0$
 MOTD-EN: grenka noob$
