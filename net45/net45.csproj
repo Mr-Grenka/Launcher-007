@@ -190,6 +190,7 @@
     <None Include="Resources\flag_ru.png" />
     <None Include="Resources\flag_ru_tr.png" />
     <None Include="Resources\vpnbg.png" />
+    <None Include="Resources\background_en.png" />
     <Content Include="Version.txt" />
     <None Include="README.md" />
     <None Include="Resources\btnOk3a.png" />

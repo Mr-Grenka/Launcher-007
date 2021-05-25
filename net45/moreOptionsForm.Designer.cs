@@ -273,7 +273,7 @@ namespace Contra
             // 
             this.camTrackBar.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.camTrackBar, "camTrackBar");
-            this.camTrackBar.Maximum = 500;
+            this.camTrackBar.Maximum = 550;
             this.camTrackBar.Minimum = 350;
             this.camTrackBar.Name = "camTrackBar";
             this.camTrackBar.Value = 350;

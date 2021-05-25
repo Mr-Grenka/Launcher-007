@@ -39,7 +39,7 @@ namespace Contra
         private Orientation orientation = Orientation.Horizontal;
 
         private int minimum = 350;
-        private int maximum = 500;
+        private int maximum = 550;
         private int smallChange = 1;
         private int largeChange = 5;
         private int _value = 0;

@@ -53,7 +53,7 @@ namespace Contra
         //bool patch1Found, patch2Found;
         string versions_url = "https://raw.githubusercontent.com/ContraMod/Launcher-007/master/Versions.txt";
         string launcher_url = "https://github.com/ContraMod/Launcher-007/releases/download/";
-        string patch_url = "http://contra.cncguild.net/Downloads/";
+        string patch_url = "http://cnc-contra.ru/download/update"; //"http://contra.cncguild.net/Downloads/";
 
         bool applyNewLauncher = false;
 
@@ -129,18 +129,155 @@ namespace Contra
             }
         }
 
-        public async void GetModUpdate(string versionsTXT, string patch_url)
+        private void UpdateLogic()
+        {
+            string versionsTXT = (new WebClient { Encoding = Encoding.UTF8 }).DownloadString(versions_url);
+
+            // Update launcher
+            GetLauncherUpdate(versionsTXT, launcher_url);
+
+            // Update patch
+            string launcher_ver = versionsTXT.Substring(versionsTXT.LastIndexOf("Launcher: ") + 10);
+            newVersion = launcher_ver.Substring(0, launcher_ver.IndexOf("$"));
+
+            // Get patch number
+            string patchNumber = versionsTXT.Substring(versionsTXT.LastIndexOf("Patch: ") + 7); // The latest patch number
+            patchNumber = patchNumber.Substring(0, patchNumber.IndexOf("$"));
+            int patchNumberInt = int.Parse(patchNumber);
+
+            //patchNumberInt = 0;
+            string exclamationMark = "";
+
+            // If launcher is up to date and patches are missing, update the mod
+            if ((newVersion == Application.ProductVersion) && (File.Exists("!Contra_Classic.ctr") || File.Exists("!Contra_Classic.big") && patchNumberInt > 0))
+            {
+                for (int i = 1; i < patchNumberInt + 1; i++)
+                {
+                    exclamationMark += "!";
+                    if (!File.Exists(exclamationMark + "!Contra_Classic_Patch" + i + ".ctr") && !File.Exists(exclamationMark + "!Contra_Classic_Patch" + i + ".big"))
+                    {
+                        //MessageBox.Show(exclamationMark);
+                        //MessageBox.Show(exclamationMark + "!Contra_Classic_Patch" + i + ".ctr");
+                        //MessageBox.Show("getting " + i.ToString());
+                        GetModUpdate(versionsTXT, patch_url, i);
+                        break;
+                    }
+                }
+            }
+
+            //Load MOTD
+            new Thread(() => ThreadProcSafeMOTD(versionsTXT)) { IsBackground = true }.Start();
+        }
+
+        private void RadioFlag_GB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RadioFlag_GB.Checked)
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+                resources.ApplyResources(this, "$this");
+                applyResources(resources, Controls);
+                Globals.RU_Checked = false;
+                Globals.GB_Checked = true;
+                this.BackgroundImage = Properties.Resources.background_en;
+                buttonLaunch.BackgroundImage = Properties.Resources.play_button_red;
+                moreOptions.BackgroundImage = Properties.Resources.settings_button_red;
+                toolTip1.SetToolTip(RadioENQuotes, "Each faction's units will speak English language.");
+                toolTip1.SetToolTip(RadioRUQuotes, "Each faction's units will speak Russian language.");
+                toolTip1.SetToolTip(RadioEN, "English in-game language.");
+                toolTip1.SetToolTip(RadioRU, "Russian in-game language.");
+                toolTip1.SetToolTip(MNew, "Use new soundtracks.");
+                toolTip1.SetToolTip(MStandard, "Use standard Zero Hour soundtracks.");
+                toolTip1.SetToolTip(DefaultPics, "Use default general portraits.");
+                toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
+                currentFileLabel = "File: ";
+                ModDLLabel.Text = "Download progress: ";
+                CancelModDLBtn.Text = "Cancel";
+                string verString, yearString = "";
+                if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
+                {
+                    verString = "1";
+                    yearString = "2021";
+                }
+                else
+                {
+                    verString = "???";
+                    yearString = "2021";
+                }
+                //versionLabel.Text = "Contra Classic " + yearString + " - Version " + verString + " - Launcher: " + Application.ProductVersion;
+                versionLabel.Text = "Contra Classic " + yearString + " - Launcher: " + Application.ProductVersion;
+
+                // Temporary hack so update runs on main thread, versionsTXT should be rewritten to be async if possible
+                try
+                {
+                    UpdateLogic();
+                }
+                catch { }
+            }
+        }
+
+        private void RadioFlag_RU_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RadioFlag_RU.Checked)
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+                resources.ApplyResources(this, "$this");
+                applyResources(resources, Controls);
+                Globals.GB_Checked = false;
+                Globals.RU_Checked = true;
+                this.BackgroundImage = Properties.Resources.background;
+                buttonLaunch.BackgroundImage = Properties.Resources.play_button_red_rus;
+                moreOptions.BackgroundImage = Properties.Resources.settings_button_red_rus;
+                toolTip1.SetToolTip(RadioENQuotes, "Юниты каждой фракций будут разговаривать на английском языке.");
+                toolTip1.SetToolTip(RadioRUQuotes, "Юниты каждой фракций будут разговаривать на русском языке.");
+                toolTip1.SetToolTip(RadioEN, "Английский язык.");
+                toolTip1.SetToolTip(RadioRU, "Русский язык.");
+                toolTip1.SetToolTip(MNew, "Включить новые саундтреки.");
+                toolTip1.SetToolTip(MStandard, "Включить стандартные саундтреки Zero Hour.");
+                toolTip1.SetToolTip(DefaultPics, "Включить портреты Генералов по умолчанию.");
+                toolTip1.SetToolTip(GoofyPics, "Включить смешные портреты Генералов.");
+                RadioENQuotes.Text = "Англ.";
+                RadioRUQuotes.Text = "Русский";
+                MNew.Text = "Новая";
+                MStandard.Text = "ZH";
+                RadioEN.Text = "Англ.";
+                RadioRU.Text = "Русский";
+                DefaultPics.Text = "По умолч.";
+                GoofyPics.Text = "Смешные";
+                currentFileLabel = "Файл: ";
+                ModDLLabel.Text = "Прогресс загрузки: ";
+                CancelModDLBtn.Text = "Отмена";
+                string verString, yearString = "";
+                if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
+                {
+                    verString = "1";
+                    yearString = "2021";
+                }
+                else
+                {
+                    verString = "???";
+                    yearString = "2021";
+                }
+                //versionLabel.Text = "Contra Classic " + yearString + " - Версия " + verString + " - Launcher: " + Application.ProductVersion;
+                versionLabel.Text = "Contra Classic " + yearString + " - Launcher: " + Application.ProductVersion;
+
+                // Temporary hack so update runs on main thread, versionsTXT should be rewritten to be async if possible
+                try
+                {
+                    UpdateLogic();
+                }
+                catch { }
+            }
+        }
+
+        public async void GetModUpdate(string versionsTXT, string patch_url, int patchNumber)
         {
             string zip_url = null;
 
-            //if (!File.Exists("!!!!!Contra009Final_Patch3_Hotfix.ctr") && !File.Exists("!!!!!Contra009Final_Patch3_Hotfix.big"))
-            //{
-            //    zip_url = patch_url + @"/Contra009FinalPatch3Hotfix.zip";
-            //}
-            //else if (!File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.ctr") && !File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.big"))
-            //{
-            //    zip_url = patch_url + @"/Contra009FinalPatch3Hotfix2.zip";
-            //}
+            zip_url = patch_url + @"/ContraClassicPatch" + patchNumber + ".zip";
+            //MessageBox.Show(patch_url + @"/ContraClassicPatch" + patchNumber + ".zip");
+
             string zip_path = zip_url.Split('/').Last();
 
             // Get mod version text
@@ -1749,11 +1886,11 @@ namespace Contra
             {
                 if (Globals.GB_Checked == true)
                 {
-                    MessageBox.Show("\"!Contra_Classic.ctr\" is missing!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("File \"!Contra_Classic.ctr\" is missing!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("\"!Contra_Classic.ctr\" отсутствует!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Файл \"!Contra_Classic.ctr\" отсутствует!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -1807,134 +1944,6 @@ namespace Contra
                 resources.ApplyResources(ctl, ctl.Name);
                 applyResources(resources, ctl.Controls);
             }
-        }
-
-        private void RadioFlag_GB_CheckedChanged(object sender, EventArgs e)
-        {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
-            resources.ApplyResources(this, "$this");
-            applyResources(resources, Controls);
-            Globals.RU_Checked = false;
-            Globals.GB_Checked = true;
-            buttonLaunch.BackgroundImage = Properties.Resources.play_button_red;
-            moreOptions.BackgroundImage = Properties.Resources.settings_button_red;
-            toolTip1.SetToolTip(RadioENQuotes, "Each faction's units will speak English language.");
-            toolTip1.SetToolTip(RadioRUQuotes, "Each faction's units will speak Russian language.");
-            toolTip1.SetToolTip(RadioEN, "English in-game language.");
-            toolTip1.SetToolTip(RadioRU, "Russian in-game language.");
-            toolTip1.SetToolTip(MNew, "Use new soundtracks.");
-            toolTip1.SetToolTip(MStandard, "Use standard Zero Hour soundtracks.");
-            toolTip1.SetToolTip(DefaultPics, "Use default general portraits.");
-            toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
-            currentFileLabel = "File: ";
-            ModDLLabel.Text = "Download progress: ";
-            CancelModDLBtn.Text = "Cancel";
-            string verString, yearString = "";
-            if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
-            {
-                verString = "1";
-                yearString = "2021";
-            }
-            else
-            {
-                verString = "???";
-                yearString = "2021";
-            }
-            //versionLabel.Text = "Contra Classic " + yearString + " - Version " + verString + " - Launcher: " + Application.ProductVersion;
-            versionLabel.Text = "Contra Classic " + yearString + " - Launcher: " + Application.ProductVersion;
-
-            // Temporary hack so update runs on main thread, versionsTXT should be rewritten to be async if possible
-            try
-            {
-                string versionsTXT = (new WebClient { Encoding = Encoding.UTF8 }).DownloadString(versions_url);
-
-                // Update launcher
-                GetLauncherUpdate(versionsTXT, launcher_url);
-
-                // Update patch
-                string launcher_ver = versionsTXT.Substring(versionsTXT.LastIndexOf("Launcher: ") + 10);
-                newVersion = launcher_ver.Substring(0, launcher_ver.IndexOf("$"));
-                // If launcher is up to date and patches are missing, update the mod
-                //if ((newVersion == Application.ProductVersion) &&
-                //    (!File.Exists("!!!!!Contra009Final_Patch3_Hotfix.ctr") && !File.Exists("!!!!!Contra009Final_Patch3_Hotfix.big") ||
-                //    !File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.ctr") && !File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.big")))
-                //{
-                //    GetModUpdate(versionsTXT, patch_url);
-                //}
-
-                //Load MOTD
-                new Thread(() => ThreadProcSafeMOTD(versionsTXT)) { IsBackground = true }.Start();
-            }
-            catch { }
-        }
-
-        private void RadioFlag_RU_CheckedChanged(object sender, EventArgs e)
-        {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
-            resources.ApplyResources(this, "$this");
-            applyResources(resources, Controls);
-            Globals.GB_Checked = false;
-            Globals.RU_Checked = true;
-            buttonLaunch.BackgroundImage = Properties.Resources.play_button_red_rus;
-            moreOptions.BackgroundImage = Properties.Resources.settings_button_red_rus;
-            toolTip1.SetToolTip(RadioENQuotes, "Юниты каждой фракций будут разговаривать на английском языке.");
-            toolTip1.SetToolTip(RadioRUQuotes, "Юниты каждой фракции будут разговаривать на русском языке.");
-            toolTip1.SetToolTip(RadioEN, "Английский язык.");
-            toolTip1.SetToolTip(RadioRU, "Русский язык.");
-            toolTip1.SetToolTip(MNew, "Включить новые саундтреки.");
-            toolTip1.SetToolTip(MStandard, "Включить стандартные саундтреки Zero Hour.");
-            toolTip1.SetToolTip(DefaultPics, "Включить портреты Генералов по умолчанию.");
-            toolTip1.SetToolTip(GoofyPics, "Включить смешные портреты Генералов.");
-            RadioENQuotes.Text = "Англ.";
-            RadioRUQuotes.Text = "Русский";
-            MNew.Text = "Новая";
-            MStandard.Text = "ZH";
-            RadioEN.Text = "Англ.";
-            RadioRU.Text = "Русский";
-            DefaultPics.Text = "По умолч.";
-            GoofyPics.Text = "Смешные";
-            currentFileLabel = "Файл: ";
-            ModDLLabel.Text = "Прогресс загрузки: ";
-            CancelModDLBtn.Text = "Отмена";
-            string verString, yearString = "";
-            if (File.Exists("!Contra_Classic.big") || File.Exists("!Contra_Classic.ctr"))
-            {
-                verString = "1";
-                yearString = "2021";
-            }
-            else
-            {
-                verString = "???";
-                yearString = "2021";
-            }
-            //versionLabel.Text = "Contra Classic " + yearString + " - Версия " + verString + " - Launcher: " + Application.ProductVersion;
-            versionLabel.Text = "Contra Classic " + yearString + " - Launcher: " + Application.ProductVersion;
-
-            // Temporary hack so update runs on main thread, versionsTXT should be rewritten to be async if possible
-            try
-            {
-                string versionsTXT = (new WebClient { Encoding = Encoding.UTF8 }).DownloadString(versions_url);
-
-                // Update launcher
-                GetLauncherUpdate(versionsTXT, launcher_url);
-
-                // Update patch
-                string launcher_ver = versionsTXT.Substring(versionsTXT.LastIndexOf("Launcher: ") + 10);
-                newVersion = launcher_ver.Substring(0, launcher_ver.IndexOf("$"));
-                // If launcher is up to date and patches are missing, update the mod
-                //if ((newVersion == Application.ProductVersion) &&
-                //    (!File.Exists("!!!!!Contra009Final_Patch3_Hotfix.ctr") && !File.Exists("!!!!!Contra009Final_Patch3_Hotfix.big") ||
-                //    !File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.ctr") && !File.Exists("!!!!!!Contra009Final_Patch3_Hotfix2.big")))
-                //{
-                //    GetModUpdate(versionsTXT, patch_url);
-                //}
-
-                //Load MOTD
-                new Thread(() => ThreadProcSafeMOTD(versionsTXT)) { IsBackground = true }.Start();
-            }
-            catch { }
         }
 
         private void Resolution_Click(object sender, EventArgs e) //Opens More Options form
