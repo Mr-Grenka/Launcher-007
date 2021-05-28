@@ -1,5 +1,5 @@
 ﻿Patch: 0$
 Mod Text: 007 Classic$
 Launcher: 1.0.0.0$
-MOTD-EN: Attention, says Grenka. We are delivering an important government message. Until the release of the update 5 days$
-MOTD-RU: Внимание, говорит Grenka. Передаем важное правительственное сообщение. До выхода обновления 5 дней$
+MOTD-EN: Attention, says Grenka. Until the release of the update 5 days$
+MOTD-RU: Внимание, говорит Grenka. До выхода обновления 5 дней$
