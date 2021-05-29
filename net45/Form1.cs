@@ -53,7 +53,9 @@ namespace Contra
         //bool patch1Found, patch2Found;
         string versions_url = "https://raw.githubusercontent.com/ContraMod/Launcher-007/master/Versions.txt";
         string launcher_url = "https://github.com/ContraMod/Launcher-007/releases/download/";
-        string patch_url = "http://cnc-contra.ru/download/update"; //"http://contra.cncguild.net/Downloads/";
+        string patch_url = "http://cnc-contra.ru/download/update/"; //"http://contra.cncguild.net/Downloads/";
+
+        int patchNumberInt = 0;
 
         bool applyNewLauncher = false;
 
@@ -143,7 +145,7 @@ namespace Contra
             // Get patch number
             string patchNumber = versionsTXT.Substring(versionsTXT.LastIndexOf("Patch: ") + 7); // The latest patch number
             patchNumber = patchNumber.Substring(0, patchNumber.IndexOf("$"));
-            int patchNumberInt = int.Parse(patchNumber);
+            patchNumberInt = int.Parse(patchNumber);
 
             //patchNumberInt = 0;
             string exclamationMark = "";
@@ -666,8 +668,20 @@ namespace Contra
             }
         }
 
-        private static void DeleteDuplicateFiles()
+        private void DeleteDuplicateFiles()
         {
+            string exclamationMark = "";
+            if (patchNumberInt > 0)
+            {
+                for (int i = 1; i < patchNumberInt + 1; i++)
+                {
+                    exclamationMark += "!";
+                    if (File.Exists(exclamationMark + "!Contra_Classic_Patch" + i + ".ctr") && File.Exists(exclamationMark + "!Contra_Classic_Patch" + i + ".big"))
+                    {
+                        File.Delete(exclamationMark + "!Contra_Classic_Patch" + i + ".big");
+                    }
+                }
+            }
             if (File.Exists("!Contra_Classic_GameData.ctr") && File.Exists("!Contra_Classic_GameData.big"))
             {
                 File.Delete("!Contra_Classic_GameData.big");
@@ -710,10 +724,19 @@ namespace Contra
             //}
         }
 
-        private static void RenameBigToCtr()
+        private void RenameBigToCtr()
         {
             try
             {
+                string exclamationMark = "";
+                if (patchNumberInt > 0)
+                {
+                    for (int i = 1; i < patchNumberInt + 1; i++)
+                    {
+                        exclamationMark += "!";
+                        File.Move(exclamationMark + "!Contra_Classic_Patch" + i + ".big", exclamationMark + "!Contra_Classic_Patch" + i + ".ctr");
+                    }
+                }
                 List<string> bigs = new List<string>
                 {
                     "!Contra_Classic_GameData.big",
@@ -840,6 +863,15 @@ namespace Contra
             {
                 try
                 {
+                    string exclamationMark = "";
+                    if (patchNumberInt > 0)
+                    {
+                        for (int i = 1; i < patchNumberInt + 1; i++)
+                        {
+                            exclamationMark += "!";
+                            File.Move(exclamationMark + "!Contra_Classic_Patch" + i + ".ctr", exclamationMark + "!Contra_Classic_Patch" + i + ".big");
+                        }
+                    }
                     File.Move("!Contra_Classic.ctr", "!Contra_Classic.big");
                     File.Move("!Contra_Classic_GameData.ctr", "!Contra_Classic_GameData.big");
 
