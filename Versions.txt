@@ -1,5 +1,5 @@
 ﻿Patch: 2$
 Mod Text: 007 Classic$
-Launcher: 2.0.0.0$
+Launcher: 1.0.0.0$
 MOTD-EN: Attention, says Grenka. Until the release of the update 5 days$
 MOTD-RU: Внимание, говорит Grenka. До выхода обновления 5 дней$
