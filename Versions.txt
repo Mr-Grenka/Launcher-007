@@ -1,4 +1,4 @@
-﻿Patch: 2$
+﻿Patch: 0$
 Mod Text: 007 Classic$
 Launcher: 1.0.0.0$
 MOTD-EN: Attention, says Grenka. Until the release of the update 5 days$
